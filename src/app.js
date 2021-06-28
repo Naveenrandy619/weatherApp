@@ -9,6 +9,7 @@ console.log(__dirname)
 console.log(path.join(__dirname, '../public'))
 
 const app = express()
+const port = process.env.PORT || 3000
 //Directories
 const publicPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../views')
@@ -66,6 +67,6 @@ app.get('*',(req,res)=>{
     res.send('<h1>Oops! 404 ErrorPage Not Found</h1>')
 })
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log('Server started...')
 })
